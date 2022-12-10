@@ -1,3 +1,15 @@
-<h1>For posts {{ .Page.Title }}</h1>
+<head>
+    {{ template "imports.html" . }}
+</head>
 
-{{ .Content }}
+<body>
+    <h1>For posts {{ .Page.Title }}</h1>
+
+
+    You are reading a
+    <b>{{ if (eq .Page.Draft true) }}Draft{{ else }}complete article{{ end }}</b>.
+
+
+    {{ .Content }}
+
+</body>
